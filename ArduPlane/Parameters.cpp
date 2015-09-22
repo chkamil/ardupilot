@@ -20,6 +20,46 @@ const AP_Param::Info Plane::var_info[] PROGMEM = {
     // @User: Advanced
     GSCALAR(format_version,         "FORMAT_VERSION", 0),
 
+    // @Param: FLAP_BREAK_SPEED
+    // @DisplayName:
+    // @Description: This determines the speed at which the flaps opens.
+    // @Units: m/s
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(flap_break_speed, "FLAP_BREAK_SPEED", 100),
+
+    // @Param: FLAP_BREAK_START
+    // @DisplayName:
+    // @Description: This determines the degree (percentage) at the beginning of the opening flap.
+    // @Units: Percent
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(flap_break_start, "FLAP_BREAK_START", 100),
+
+    // @Param: FLAP_BREAK_SSTEP
+    // @DisplayName:
+    // @Description: My special destription1.
+    // @Units: m/s
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(flap_break_speed_step, "FLAP_BREAK_SSTEP", 100),
+
+    // @Param: FLAP_BREAK_FSTEP
+    // @DisplayName:
+    // @Description: My special destription2.
+    // @Units: m/s
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(flap_break_flap_step, "FLAP_BREAK_FSTEP", 100),
+
+    // @Param: FLAP_BREAK_STOP
+    // @DisplayName:
+    // @Description: This determines the speed at which the flap closes.
+    // @Units: Percent
+    // @Range: -32768 32767
+    // @User: Advanced
+    GSCALAR(flap_break_stop, "FLAP_BREAK_STOP", 100),
+
     // @Param: SYSID_SW_TYPE
     // @DisplayName: Software Type
     // @Description: This is used by the ground station to recognise the software type (eg ArduPlane vs ArduCopter)
