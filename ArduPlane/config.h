@@ -22,6 +22,8 @@
 
 #include "defines.h"
 
+#define zmiana 100
+
 ///
 /// DO NOT EDIT THIS INCLUDE - if you want to make a local change, make that
 /// change in your local copy of APM_Config.h.
