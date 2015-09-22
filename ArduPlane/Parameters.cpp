@@ -22,7 +22,7 @@ const AP_Param::Info Plane::var_info[] PROGMEM = {
 
     // @Param: FLAP_BREAK_SPEED
     // @DisplayName:
-    // @Description: This determines the speed at which the flaps opens.
+    // @Description: This determines the value of speed at which the flaps opens.
     // @Units: m/s
     // @Range: -32768 32767
     // @User: Advanced
@@ -54,7 +54,7 @@ const AP_Param::Info Plane::var_info[] PROGMEM = {
 
     // @Param: FLAP_BREAK_STOP
     // @DisplayName:
-    // @Description: This determines the speed at which the flap closes.
+    // @Description: This determines the value of speed at which the flap closes.
     // @Units: Percent
     // @Range: -32768 32767
     // @User: Advanced

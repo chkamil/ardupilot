@@ -434,8 +434,8 @@ public:
     //
     AP_Int8 flap_break_speed;
     AP_Int8 flap_break_start;
-    AP_Int8 flap_break_sstep;
-    AP_Int8 flap_break_fstep;
+    AP_Int8 flap_break_speed_step;
+    AP_Int8 flap_break_flap_step;
     AP_Int8 flap_break_stop;
     AP_Int8 auto_trim;
     AP_Int8 mix_mode;
