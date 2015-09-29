@@ -82,7 +82,42 @@ const AP_Scheduler::Task Plane::scheduler_tasks[] PROGMEM = {
     SCHED_TASK(terrain_update,          5,    500),
     SCHED_TASK(update_is_flying_5Hz,   10,    100),
     SCHED_TASK(dataflash_periodic,      1,    300),
+    SCHED_TASK(frsky_telemetry_send,   10,    100),
 };
+
+
+void Plane::flaps_control()
+{
+    static int flap = 0;
+    static int i = 1;
+    if (control_mode == AUTO || control_mode == FLY_BY_WIRE_B)
+    {
+        if (airspeed.get_airspeed() > g.flap_break_speed && flap < g.flap_break_start)
+        {
+            flap = g.flap_break_start;
+        }
+        else if (airspeed.get_airspeed() < g.flap_break_stop)
+        {
+            flap = 0;
+            i = 1;
+        }
+        if ( airspeed.get_airspeed() > g.flap_break_speed + (g.flap_break_speed_step * i))
+        {
+            flap = g.flap_break_start + (g.flap_break_flap_step * i);
+            i++;
+        }
+        else if(airspeed.get_airspeed() > g.flap_break_speed + (g.flap_break_speed_step * i-1))
+        {
+            i--;
+        }
+        if( flap > 100)
+        {
+            flap = 100;
+        }
+
+        RC_Channel_aux::set_servo_out(RC_Channel_aux::k_flap_auto, flap);
+    }
+}
 
 void Plane::setup() 
 {

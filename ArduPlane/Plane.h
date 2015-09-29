@@ -964,6 +964,7 @@ private:
     void init_capabilities(void);
     void dataflash_periodic(void);
     uint16_t throttle_min(void) const;
+	void flaps_control(void);
     
 public:
     void mavlink_delay_cb();

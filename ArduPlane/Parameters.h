@@ -54,6 +54,11 @@ public:
 
         // Misc
         //
+		k_param_flap_break_speed,
+        k_param_flap_break_start,
+        k_param_flap_break_speed_step,
+        k_param_flap_break_flap_step,
+        k_param_flap_break_stop,
         k_param_auto_trim      = 10,
         k_param_log_bitmask_old,  // unused
         k_param_pitch_trim_cd,
@@ -431,6 +436,11 @@ public:
 
     // Misc
     //
+	AP_Int8 flap_break_speed;
+    AP_Int8 flap_break_start;
+    AP_Int8 flap_break_speed_step;
+    AP_Int8 flap_break_flap_step;
+    AP_Int8 flap_break_stop;
     AP_Int8 auto_trim;
     AP_Int8 mix_mode;
     AP_Int8 vtail_output;
